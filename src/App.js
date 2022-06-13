@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import ExerciseDetail from './pages/ExerciseDetail';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Error from './components/Error';
 
 function App(){
 
@@ -16,6 +17,7 @@ function App(){
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/exercise/:id' element={<ExerciseDetail/>}/>
+        <Route path='*' element={<Error/>}/>
       </Routes>
       <Footer />
     </Box>
