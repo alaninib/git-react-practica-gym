@@ -6,9 +6,25 @@ export const exerciseOptions = {
   }
 };
 
+export const youtubeOptions = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Host': 'youtube-search-and-download.p.rapidapi.com',
+    'X-RapidAPI-Key': '96f9c7cf74msh9aab05904f1cd85p18c510jsn8d234e74487f'
+  }
+};
+
 
 export const fetchData = async (url, options) => {
-  const response = await fetch(url, options);
-  const data = await response.json();
-  return data;
+  try {
+    const response = await fetch(url, options);
+    if(!response.ok){
+      throw new Error(`${response.status} ${response.statusText}`);
+    }else{
+      const data = await response.json();
+      return data;
+    }
+  } catch (error) {
+    console.log(error)
+  }
 }
