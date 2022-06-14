@@ -6,7 +6,6 @@ import TargetImage from '../assets/icons/target.png';
 import EquipmentImage from '../assets/icons/equipment.png';
 
 function Detail({ exerciseDetails }) {
-  debugger;
   const { bodyPart, equipment, gifUrl, id, name, target } = exerciseDetails;
 
   const extraDetail = [

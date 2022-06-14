@@ -50,15 +50,16 @@ function SearchExercises({setExercises, bodyPart, setBodyPart}) {
   }
 
   return (
-    <Stack id="exercises" alignItems="center" mt="37px" justifyContent="center" p="20px">
+    <Stack id="exercises" alignItems="center" justifyContent="center" mt="37px" p="20px">
       <Typography fontWeight={700} sx={{fontSize: { lg: '44px', xs:'30px'}}} mb="50px" textAlign="center">
         Awesome Exercises You <br />
         Should Know
       </Typography>
       <Box position="relative" mb="72px">
         <TextField sx={{ 
-          input: {fontWeight: '700', border: 'none', borderRadius: '4px'}, 
-          width:{ lg: '800px', xs:'300px'},
+          input: {fontWeight: '600', border: 'none', borderRadius: '4px'}, 
+          width:{ lg: '800px', xs:'100%'},
+          marginLeft:{xs:'-30px'},
           background: '#fff',
           borderRadius: '40px'
         }} 
@@ -73,8 +74,8 @@ function SearchExercises({setExercises, bodyPart, setBodyPart}) {
             backgroundColor:'#FF2625',
             color: '#fff',
             textTransform: 'none',
-            width:{ lg: '175px', xs: '80px'},
-            fontSize:{ lg: '20px', xs: '14px'},
+            width:{ lg: '175px', xs: '50px'},
+            fontSize:{ lg: '20px', xs: '10px'},
             height:'56px',
             position: 'absolute'
           }}
@@ -84,7 +85,7 @@ function SearchExercises({setExercises, bodyPart, setBodyPart}) {
           Search
         </Button>
       </Box>
-      <Box sx={{position: 'relative', width: '100%', p:'20px'}}>
+      <Box margin="1px solid red" sx={{position: 'relative', width: '100%', p:'20px'}}>
         <HorizontalScrollBar data={bodyParts} bodyParts bodyPart={bodyPart} setBodyPart={setBodyPart} isBodyPart />
       </Box>
     </Stack>
