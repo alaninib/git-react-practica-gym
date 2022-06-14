@@ -2,16 +2,15 @@ import React from 'react'
 import { Box, Stack, Typography } from '@mui/material';
 
 function ExerciseVideos({ exerciseVideos, name}) {
-  debugger;
   if(!exerciseVideos.length) return 'Loading...';
   return (
-    <Box sx={{ marginTop: { lg: '200px', xs: '20px'}}} p="20px">
+    <Box sx={{ marginTop: { lg: '200px', xs: '50px'}, marginBottom: { lg: '200px', xs: '50px'}}} p="20px">
       <Typography variant="h3" mb="33px">
         Watch <span style={{ color: '#ff2625', textTransform: 'capitalize'}}>{name}</span> exercise videos
       </Typography>
       <Stack justifyContent="flex-start" flexWrap="wrap" alignItems="center" sx={{
         flexDirection: { lg: 'row'},
-        gap: { lg: '110px', xs: '0'}
+        gap: { lg: '110px', xs: '10px'},
       }}
       >
         {exerciseVideos?.slice(0, 6).map((item, index) => (
