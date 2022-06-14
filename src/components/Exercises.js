@@ -10,8 +10,10 @@ export default function Exercises({exercises, setExercises, bodyPart}) {
   const [currentPage, setCurrentPage] = useState(1);
   const exercisesPerPage = 9;
 
+  //para paginacion se realizan estas operaciones;
   const indexOfLastExercise = currentPage * exercisesPerPage;
   const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
+  //se visuaizaran 9 ejercicios por pagina}
   const currentExercises = exercises.slice(indexOfFirstExercise, indexOfLastExercise) //obtiene los primeros 9
 
   const paginate = (e, value) => {
@@ -19,7 +21,7 @@ export default function Exercises({exercises, setExercises, bodyPart}) {
     window.scrollTo({ top: 1800, behavior: 'smooth'})
   }
 
-  const fetchExercseData = async () => {
+  const fetchExerciseData = async () => {
     let exercisesData = [];
     if(bodyPart === "all"){
       exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
@@ -30,7 +32,7 @@ export default function Exercises({exercises, setExercises, bodyPart}) {
   }
 
   useEffect(() => {
-    fetchExercseData();
+    fetchExerciseData();
   }, [bodyPart])
 
   return (
